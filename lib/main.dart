@@ -1,6 +1,8 @@
 import 'package:animatios_demo/animations/animated_cross_fade.dart';
 import 'package:flutter/material.dart';
 
+import 'animations/animated_physical_model.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,6 +18,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const AnimatedCrossFadeDemo());
+        home:  AnimatedPhysicalModalWidget());
   }
 }

@@ -45,7 +45,26 @@ class _AnimatedCrossFadeDemoState extends State<AnimatedCrossFadeDemo> {
               ),
               crossFadeState:
                   _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-              duration: const Duration(seconds: 1))
+              duration: const Duration(seconds: 1)),
+          TweenAnimationBuilder(
+            duration: const Duration(milliseconds: 1000),
+            curve: Curves.bounceOut,
+            tween: Tween(begin: 1.0, end: 0.5),
+            builder: (context, value, child){
+              return Transform.translate(
+                offset:  Offset(
+                    0.0,
+                    value * 100
+                ),
+                child: child,
+              );
+            },
+            child: Container(
+              width: 60,
+              height: 100,
+              color: Colors.blueAccent,
+            ),
+          ),
         ],
       ),
     );

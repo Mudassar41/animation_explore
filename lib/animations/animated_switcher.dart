@@ -30,6 +30,26 @@ class _AnimatedSwitcherState extends State<AnimatedSwitcherDemo> {
               style: TextStyle(fontSize: 45, color: Colors.black),
             ),
           ),
+
+          TweenAnimationBuilder(
+            child: Container(
+              width: 60,
+              height: 100,
+              color: Colors.blueAccent,
+            ),
+            duration: Duration(milliseconds: 1000),
+            curve: Curves.bounceOut,
+            tween: Tween(begin: 1.0, end: 0.0),
+            builder: (context, value, child){
+              return Transform.translate(
+                offset:  Offset(
+                    0.0,
+                    value * 100
+                ),
+                child: child,
+              );
+            },
+          ),
           ElevatedButton(
               onPressed: () {
                 setState(() {
